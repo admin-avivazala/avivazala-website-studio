@@ -3,7 +3,7 @@ import { baseLang } from '../lib/lang'
 import { GrYoga } from "react-icons/gr";
 
 export default defineType({
-  title: 'Event', 
+  title: 'Event',
   name: 'event',
   type: 'document',
   icon: GrYoga,
@@ -72,6 +72,12 @@ export default defineType({
       description: 'If this will be visible in your websiste',
       initialValue: true,
     }),
+    defineField({
+      title: 'Attendants',
+      name: 'attendants',
+      type: 'array',
+      of: [{ type: 'eventAttendant' }]
+    })
   ],
   preview: {
     select: {

@@ -13,7 +13,8 @@ const groups = [
     name: 'Settings',
     menuGroups: [
       ['navigation'],
-      ['settings']
+      ['languagesAvailable'],
+      ['customSettings']
     ]
   }
 ];

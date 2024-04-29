@@ -3,10 +3,11 @@ import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemaTypes'
 import { structure } from './studio/structure';
+import { myStudioTitle } from './lib/enviroment';
 
 export default defineConfig({
   name: 'default',
-  title: 'Avivazala ' + process.env.NODE_ENV?.substring(0, 3),
+  title: myStudioTitle + ' #' + process.env.NODE_ENV?.substring(0, 3),
 
   projectId: 'qkrkmcx4',
   dataset: process.env.SANITY_DATASET || 'development',

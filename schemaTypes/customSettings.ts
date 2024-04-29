@@ -1,28 +1,27 @@
 import { defineField, defineType } from 'sanity'
-import { baseLang } from '../lib/lang'
 import { GrSettingsOption } from "react-icons/gr";
 
 export default defineType({
-  title: 'Settings',
-  name: 'settings',
+  title: 'Custom Settings',
+  name: 'customSettings',
   type: 'document',
   icon: GrSettingsOption,
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'key',
+      title: 'Key',
       type: 'string',
     }),
     defineField({
       name: 'value',
-      title: 'Value',
+      title: 'Value(s)',
       type: 'array',
       of: [{type: 'string'}]
     }),
   ],
   preview: {
     select: {
-      title: `title.${baseLang.id}`,
+      title: 'key',
     }
   }
 })

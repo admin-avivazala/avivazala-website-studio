@@ -1,0 +1,1 @@
+export const myStudioTitle = process.env.SANITY_STUDIO_TITLE;
