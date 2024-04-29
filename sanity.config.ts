@@ -6,10 +6,10 @@ import { structure } from './studio/structure';
 
 export default defineConfig({
   name: 'default',
-  title: 'Avivazala',
+  title: 'Avivazala ' + process.env.NODE_ENV?.substring(0, 3),
 
   projectId: 'qkrkmcx4',
-  dataset: 'production',
+  dataset: process.env.SANITY_DATASET || 'development',
 
   plugins: [
     structureTool({ structure }),
