@@ -8,14 +8,20 @@ export default defineType({
   icon: GrUserFemale,
   fields: [
     defineField({
-      title: "fullName",
+      title: "Full Name",
       name: "fullName",
-      type: "string"
+      type: "string",
+      validation: (rule) => {
+        return rule.required();
+      }
     }),
     defineField({
       title: "Email",
       name: "email",
       type: "email",
+      validation: (rule) => {
+        return rule.required();
+      }
     }),
     defineField({
       title: "Phone",
@@ -23,4 +29,4 @@ export default defineType({
       type: "string"
     }),
   ]
-})
+});

@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 import { GrSettingsOption } from "react-icons/gr";
 
 export default defineType({
@@ -11,12 +11,18 @@ export default defineType({
       name: 'key',
       title: 'Key',
       type: 'string',
+      validation: (rule) => {
+        return rule.required();
+      }
     }),
     defineField({
       name: 'value',
       title: 'Value(s)',
       type: 'array',
-      of: [{type: 'string'}]
+      of: [{ type: 'string' }],
+      validation: (rule) => {
+        return rule.required();
+      }
     }),
   ],
   preview: {
@@ -24,4 +30,4 @@ export default defineType({
       title: 'key',
     }
   }
-})
+});

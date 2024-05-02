@@ -15,7 +15,7 @@ export default defineType({
     }),
     defineField({
       title: "Navigation Item URL",
-      name: "navigationItemUrl",
+      name: "navigationItemLink",
       type: "navigationLink"
     })
   ],
@@ -24,4 +24,4 @@ export default defineType({
       title: `title.${baseLang.id}`,
     }
   }
-})
+});

@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity'
+import { defineType, defineField } from 'sanity';
 import { supportedLanguages } from '../../lib/lang';
 
 const fields = supportedLanguages.map((lang) => (
@@ -6,7 +6,8 @@ const fields = supportedLanguages.map((lang) => (
     title: lang.title,
     name: lang.id,
     type: 'string',
-    fieldset: lang.isDefault ? undefined : 'translations'
+    fieldset: lang.isDefault ? undefined : 'translations',
+    validation: (rule) => lang.isDefault ? rule.required() : rule.custom(() => true)
   })
 ));
 
@@ -22,4 +23,4 @@ export default defineType({
     }
   ],
   fields,
-})
+});

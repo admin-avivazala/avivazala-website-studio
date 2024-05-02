@@ -10,7 +10,10 @@ export default defineType({
     defineField({
       title: "Title",
       name: "title",
-      type: "string"
+      type: "string",
+      validation: (rule) => {
+        return rule.required();
+      }
     }),
     defineField({
       title: "Navigation Id",
@@ -24,7 +27,10 @@ export default defineType({
       title: "Navigation items",
       name: "items",
       type: "array",
-      of: [{ type: "navigationItem" }]
+      of: [{ type: "navigationItem" }],
+      validation: (rule) => {
+        return rule.required();
+      }
     })
   ]
-})
+});

@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity'
-import { supportedLanguages, baseLang } from '../lib/lang'
+import { defineField, defineType } from 'sanity';
+import { supportedLanguages, baseLang } from '../lib/lang';
 import { GrSettingsOption } from "react-icons/gr";
 
 const languageIds = supportedLanguages.map(lang => lang.id);
@@ -18,14 +18,14 @@ export default defineType({
       of: [{ type: 'string', options: { list: languageIds } }],
       initialValue: languageIds,
       validation: rule =>
-        rule.min(1).max(languageIds.length).custom(fields => {
+        rule.required().min(1).max(languageIds.length).custom(fields => {
           if (!fields || !fields.length) {
-            return 'There should be at least 1 language'
+            return 'There should be at least 1 language';
           }
           if (fields.filter(item => !languageIds.includes(item as string)).length > 0) {
-            return 'Choose only available languages'
+            return 'Choose only available languages';
           }
-          return true
+          return true;
         })
     }),
     defineField({
@@ -35,12 +35,12 @@ export default defineType({
       of: [{ type: 'string', options: { list: languageIds } }],
       initialValue: [baseLang.id],
       validation: rule =>
-        rule.length(1).custom(fields => {
+        rule.required().length(1).custom(fields => {
           if (!fields || !fields.length) {
-            return 'There should be at least 1 default language'
+            return 'There should be at least 1 default language';
           }
-          return true
+          return true;
         })
     })
   ]
-})
+});
