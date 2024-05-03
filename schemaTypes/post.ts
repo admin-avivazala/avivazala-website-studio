@@ -1,5 +1,5 @@
-import {defineField, defineType} from 'sanity'
-import { baseLang } from '../lib/lang'
+import { defineField, defineType } from 'sanity';
+import { baseLang } from '../lib/lang';
 import { GrDocumentWord } from "react-icons/gr";
 
 export default defineType({
@@ -22,7 +22,7 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: { type: 'author' },
     }),
     defineField({
       name: 'mainImage',
@@ -36,7 +36,7 @@ export default defineType({
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'postCategory'}}],
+      of: [{ type: 'reference', to: { type: 'postCategory' } }],
     }),
     defineField({
       name: 'publishedAt',
@@ -46,7 +46,7 @@ export default defineType({
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: 'localeBlockContent',
     }),
   ],
 
@@ -57,8 +57,8 @@ export default defineType({
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection;
+      return { ...selection, subtitle: author && `by ${author}` };
     },
   },
-})
+});

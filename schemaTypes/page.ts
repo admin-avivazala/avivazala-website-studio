@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity'
-import { baseLang } from '../lib/lang'
+import { defineField, defineType } from 'sanity';
+import { baseLang } from '../lib/lang';
 import { GrDocument } from "react-icons/gr";
 
 export default defineType({
@@ -29,7 +29,7 @@ export default defineType({
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: 'localeBlockContent',
     }),
   ],
 
@@ -39,4 +39,4 @@ export default defineType({
       media: 'mainImage',
     }
   },
-})
+});
