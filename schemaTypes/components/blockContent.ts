@@ -1,4 +1,4 @@
-import { defineType, defineArrayMember } from 'sanity'
+import { defineType, defineArrayMember } from 'sanity';
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -61,7 +61,64 @@ export default defineType({
     // as a block type.
     defineArrayMember({
       type: 'image',
+      fields: [
+        {
+          name: 'alt',
+          title: 'Description of the image for screen readers',
+          description: '⚡ Optional but highly encouraged to make content more accessible for visually impaired folks.',
+          type: 'string',
+        },
+        {
+          name: 'size',
+          title: 'Size',
+          type: 'string',
+          initialValue: 'orig',
+          options: {
+            list: [
+              {
+                value: 'sm',
+                title: 'Small'
+              },
+              {
+                value: 'md',
+                title: 'Medium'
+              },
+              {
+                value: 'lg',
+                title: 'Large'
+              },
+              {
+                value: 'orig',
+                title: 'Original'
+              },
+            ]
+          }
+        },
+        {
+          name: 'alignment',
+          title: 'Alignment',
+          type: 'string',
+          initialValue: 'center',
+          options: {
+            layout: 'radio',
+            list: [
+              {
+                value: 'left',
+                title: 'Left'
+              },
+              {
+                value: 'center',
+                title: 'Center'
+              },
+              {
+                value: 'right',
+                title: 'Right'
+              },
+            ]
+          }
+        },
+      ],
       options: { hotspot: true },
     }),
   ],
-})
+});

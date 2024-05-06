@@ -1884,6 +1884,55 @@
                       },
                       "optional": true
                     },
+                    "alt": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      },
+                      "optional": true
+                    },
+                    "size": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "union",
+                        "of": [
+                          {
+                            "type": "string",
+                            "value": "sm"
+                          },
+                          {
+                            "type": "string",
+                            "value": "md"
+                          },
+                          {
+                            "type": "string",
+                            "value": "lg"
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
+                    "alignment": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "union",
+                        "of": [
+                          {
+                            "type": "string",
+                            "value": "left"
+                          },
+                          {
+                            "type": "string",
+                            "value": "center"
+                          },
+                          {
+                            "type": "string",
+                            "value": "right"
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
                     "_type": {
                       "type": "objectAttribute",
                       "value": {
@@ -2122,6 +2171,55 @@
                       "value": {
                         "type": "inline",
                         "name": "sanity.imageCrop"
+                      },
+                      "optional": true
+                    },
+                    "alt": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      },
+                      "optional": true
+                    },
+                    "size": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "union",
+                        "of": [
+                          {
+                            "type": "string",
+                            "value": "sm"
+                          },
+                          {
+                            "type": "string",
+                            "value": "md"
+                          },
+                          {
+                            "type": "string",
+                            "value": "lg"
+                          }
+                        ]
+                      },
+                      "optional": true
+                    },
+                    "alignment": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "union",
+                        "of": [
+                          {
+                            "type": "string",
+                            "value": "left"
+                          },
+                          {
+                            "type": "string",
+                            "value": "center"
+                          },
+                          {
+                            "type": "string",
+                            "value": "right"
+                          }
+                        ]
                       },
                       "optional": true
                     },
@@ -2404,6 +2502,55 @@
                 "value": {
                   "type": "inline",
                   "name": "sanity.imageCrop"
+                },
+                "optional": true
+              },
+              "alt": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                },
+                "optional": true
+              },
+              "size": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "sm"
+                    },
+                    {
+                      "type": "string",
+                      "value": "md"
+                    },
+                    {
+                      "type": "string",
+                      "value": "lg"
+                    }
+                  ]
+                },
+                "optional": true
+              },
+              "alignment": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "union",
+                  "of": [
+                    {
+                      "type": "string",
+                      "value": "left"
+                    },
+                    {
+                      "type": "string",
+                      "value": "center"
+                    },
+                    {
+                      "type": "string",
+                      "value": "right"
+                    }
+                  ]
                 },
                 "optional": true
               },
